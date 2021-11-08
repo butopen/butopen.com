@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "post";
+@import "typography";
+
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+
+.transparent {
+  @apply opacity-0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 80px;
+}
+
+body, html {
+  font-family: 'Roboto', sans-serif;
+  @apply bg-gradient-to-br from-gray-100 to-gray-50;
+}
+
+.logo-font {
+  font-family: 'Rubik', sans-serif;
+}
+
+.hero {
+  @apply flex flex-col justify-center items-center p-16;
+  h1 {
+    @apply mb-12
+  }
+
+  p {
+    @apply text-gray-400 text-center m-1 font-thin;
+    b {
+      @apply text-gray-600;
+    }
+  }
+}
+
+img.logo {
+  @apply w-48
+}
+
+.logo-text-light {
+  @apply text-6xl font-light tracking-widest text-gray-400;
+  @extend .logo-font;
+}
+
+.logo-text-heavy {
+  @apply text-6xl font-black text-gray-700 tracking-widest ;
+  @extend .logo-font
+}
+
+a {
+  @apply hover:underline
+}
+
+

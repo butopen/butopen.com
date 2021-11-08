@@ -1,5 +1,5 @@
 ---
-title: How to design a Single Sign On Open Source Service - Starting from People 
+title: How to design a Single Sign-On Open Source Service - Starting from People 
 description: We will see the first step taken when designing a new service for developers. We will think about how developers will use it, what's the fastest way on the front-end, what the back-end will need 
 layout: layouts/post 
 permalink: /blog/designing-an-open-source-single-sign-on-service-ssonext/
@@ -8,7 +8,7 @@ tags: ['developer experience', 'DX', 'software design', 'ssonext']
 
 ![designing ssonext - a simple single sign on service](shot1.jpg)
 
-How to design a SSO service: thinking about how the front-end and the back-end developer will use it.
+How to design an SSO service: thinking about how the front-end and the back-end developer will use it.
 
 ## Why another SSO service 😁
 
@@ -17,10 +17,10 @@ In ButOpen we have fun creating Open Source software.
 What we have noticed is that every time we create a new project from scratch, we need to include a user management
 system for **authentication and authorization**.
 
-There are several products for SSO (Single Sign On), but none met our needs:
+There are several products for SSO (Single Sign-On), but none met our needs:
 
 1) can be integrated into a Front-end project with very few lines of code
-2) Open source (of course 😉 )
+2) Open-source (of course 😉 )
 3) Extendable with plugins
 4) Activated in a few seconds on the cloud or on-premise
 
@@ -34,7 +34,7 @@ projects.
 
 SSONext was born.
 
-In this post we talk about the design process, since in ButOpen when creating a new project we first focus on what **
+In this post, we talk about the design process, since in ButOpen when creating a new project we first focus on what **
 implementation choices** to make in order to satisfy those who will use it.
 
 ## Front-end: looking for the fastest way to integrate it 😎
@@ -53,7 +53,7 @@ tag to use into our HTML code.
 
 When the user logs in, a token is automatically saved in the localStorage to be used in HTTP calls.
 
-For a basic project this is more than enough. 
+For a basic project, this is more than enough. 
 
 In more complex projects, the front-end developer would like to have 
 the ability to extend the `<sn-login>` tag with a series of handlers attached to the most common events:
@@ -65,8 +65,8 @@ the ability to extend the `<sn-login>` tag with a series of handlers attached to
 ## Back-end: looking for the fastest way to integrate it 😏
 
 The backend developer needs to understand if a token is valid or not.
-In addition, the developer may need to search for a user, or a list of users.
-Therefore we will provide the developer with an API to integrate into the backend code with a simple copy / paste.
+In addition, the developer may need to search for a user or a list of users.
+Therefore we will provide the developer with an API to integrate into the backend code with a simple copy/paste.
 
 This API will allow him to:
 - verify that a token is valid
@@ -136,7 +136,7 @@ is a matter of seconds.
 
 Notes: 
 - in the code above the verification will be synchronous: it will be asynchronous only the first time!
-- here the code is in TypeScript, but we can allow to copy in the language you prefer (or copy the endpoints only)
+- here the code is in TypeScript, but we can allow copying in the language the developer prefers (or copy the endpoints only)
 
 This will be the first version of SSONext. You will find it soon in the [butopen repo](https://github.com/butopen).
 

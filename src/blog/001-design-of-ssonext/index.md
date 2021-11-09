@@ -122,7 +122,7 @@ export class SSONextApi {
         //...
     }
 
-    async updateUserNameSurname(userid: string, name: string, surname: string) {
+    async updateUserNameSurname(email: string, name: string, surname: string) {
         //...
     }
     

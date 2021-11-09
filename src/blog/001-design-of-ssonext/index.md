@@ -23,6 +23,7 @@ There are several products for SSO (Single Sign-On), but none met our needs:
 2) Open-source (of course 😉 )
 3) Extendable with plugins
 4) Activated in a few seconds on the cloud or on-premise
+5) Allowing the management of roles (as simple strings) and additional information saved as a JSON
 
 Existing solutions are cumbersome and too complex for the simple use cases we needed.
 
@@ -41,9 +42,13 @@ implementation choices** to make in order to satisfy those who will use it.
 ![A login form to integrate into our HTML code](shot2.jpg)
 
 The goal of an SSO system for the front-end developer is to have **a form that allows to login**. 
-And when a user needs to register, a registration form.
 
-The ideal solution for the developer is to integrate a tag that includes the login form.
+The front-end dev may prefer one of these solutions:
+1) Use an already available form as a web component
+2) Use the sso-next APIs to login, register, reset password, forgot password, ...
+
+### Providing a web component 
+For the first point, the ideal solution for the developer is to integrate a tag that includes the login form.
 Let's say a 
 ``` html
 <sn-login> </sn-login>
@@ -61,6 +66,28 @@ the ability to extend the `<sn-login>` tag with a series of handlers attached to
 - on-login
 - on-register
 - on-token
+
+### Providing some SSO APIs
+
+If the front-end developer likes to have full control on the login and register forms, then providing API would be 
+a better solution.
+
+The APIs would allow to:
+1) login using an endpoint similar to this: 
+
+POST /api/login 
+```js
+{email: "", password: ""}
+```
+
+2) register using and endpoint like this: 
+
+POST /api/register 
+```js
+{email: "", name: "", surname: "", password: "", roles: ["user"], info: {...}}
+```
+
+And then an API to allow password reset.
 
 ## Back-end: looking for the fastest way to integrate it 😏
 
@@ -134,8 +161,11 @@ export class SSONextApi {
 The idea is that if the developer can copy/paste the source code, customizing it based on his/her own needs 
 is a matter of seconds.
 
+The alternative can be a module available through NPM, exposing the same features.
+
 Notes: 
-- in the code above the verification will be synchronous: it will be asynchronous only the first time!
+- some methods require the token as input and operate synchronously, without asking anything to SSONext 
+(in the code above the verification will be synchronous: it will be asynchronous only the first time!)
 - here the code is in TypeScript, but we can allow copying in the language the developer prefers (or copy the endpoints only)
 
 This will be the first version of SSONext. You will find it soon in the [butopen repo](https://github.com/butopen).

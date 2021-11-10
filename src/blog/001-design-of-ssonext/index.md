@@ -1,12 +1,12 @@
 ---
 title: How to design a Single Sign-On Open Source Service - Starting from People 
 description: We will see the first step taken when designing a new service for developers. We will think about how developers will use it, what's the fastest way on the front-end, what the back-end will need 
-layout: layouts/post 
+layout: layouts/post
+image: shot1.jpg
+imageAlt: designing ssonext - a simple single sign on service
 permalink: /blog/designing-an-open-source-single-sign-on-service-ssonext/
-tags: ['developer experience', 'DX', 'software design', 'ssonext']
+tags: ['developer experience', 'DX', 'software design', 'ssonext', 'butopen']
 ---
-
-![designing ssonext - a simple single sign on service](shot1.jpg)
 
 How to design an SSO service: thinking about how the front-end and the back-end developer will use it.
 

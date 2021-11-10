@@ -6,6 +6,6 @@ It is written in eleventy.
 
 It consists of a custom very very very simple template.
 
-It has basic SEO implementation.
+It has 100/100 lighthouse SEO score.
 
 It allows each post to reference images from the post source folder (something eleventy is missing by default).

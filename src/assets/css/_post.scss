@@ -1,3 +1,19 @@
+a.post-card {
+  @apply shadow flex hover:no-underline hover:shadow-xl bg-white;
+  img {
+    @apply h-28
+  }
+  >div {
+    @apply pl-2 flex-1;
+    h3 {
+      @apply m-0 mt-2
+    }
+    p {
+      @apply text-xs m-0 text-gray-500
+    }
+  }
+}
+
 .back-to-link {
   @apply my-8 block text-gray-400 text-sm opacity-70 hover:opacity-100;
   img {
@@ -12,7 +28,7 @@
   }
   
   ul.tags {
-    @apply inline-flex list-none p-0 m-0 text-xs;
+    @apply inline-flex list-none p-0 m-0 text-xs text-gray-400;
     li {
       @apply mr-4;
     }

@@ -23,6 +23,22 @@ body, html {
   @apply bg-gradient-to-br from-gray-100 to-gray-50;
 }
 
+body {
+  @apply flex flex-col
+}
+.main-root {
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+  flex: 1;
+  .privacy {
+    @apply p-4 flex justify-center mt-12
+  }
+}
+
+
 .logo-font {
   font-family: 'Rubik', sans-serif;
 }

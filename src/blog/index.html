@@ -3,6 +3,7 @@ title: Open Knowledge - open source projects, open knowledge, shared persistent 
 description: ButOpen is a community of developers to develop open source projects, share knowledge and revenues from these projects
 permalink: /blog/
 layout: layouts/base
+posts: 
 ---
 
 <div>
@@ -24,16 +25,11 @@ layout: layouts/base
             And we want to share it with our community.
         </p>
 
-        {% for post in collections.butopen %}
+        {% for post in site.posts %}
         <a class="post-card" href="{{ post.url | url }}">
-            <img src="{{post.url | url}}{{post.data.image}}"/>
+            <img src="{{post.data.image}}" alt="{{post.data.description}}" />
             <div>
                 <h3>{{ post.data.title }}</h3>
-                <ul class="tags">
-                    {%- for tag in post.data.tags -%}
-                    <li>#{{ tag }}</li>
-                    {%- endfor -%}
-                </ul>
                 <p>
                     {{post.data.description}}
                 </p>

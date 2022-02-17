@@ -1,13 +1,15 @@
 a.post-card {
-  @apply shadow flex hover:no-underline hover:shadow-xl bg-white;
+  @apply shadow flex hover:no-underline hover:shadow-xl bg-white m-4;
   img {
     @apply h-28
   }
-  >div {
+
+  > div {
     @apply pl-2 flex-1;
     h3 {
       @apply m-0 mt-2
     }
+
     p {
       @apply text-xs m-0 text-gray-500
     }
@@ -26,16 +28,22 @@ a.post-card {
   img:first-child {
     @apply shadow-xl
   }
-  
+
   ul.tags {
     @apply inline-flex list-none p-0 m-0 text-xs text-gray-400;
     li {
       @apply mr-4;
     }
   }
+
   
+
 }
 
 h2 {
   @apply mt-12
+}
+
+a {
+  @apply text-blue-400 hover:text-blue-500;
 }

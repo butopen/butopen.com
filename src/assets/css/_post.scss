@@ -1,5 +1,5 @@
 a.post-card {
-  @apply shadow flex hover:no-underline hover:shadow-xl bg-white m-4;
+  @apply shadow flex hover:no-underline hover:shadow-xl bg-white m-4 flex-col md:flex-row;
   img {
     @apply h-28
   }
@@ -30,7 +30,7 @@ a.post-card {
   }
 
   ul.tags {
-    @apply inline-flex list-none p-0 m-0 text-xs text-gray-400;
+    @apply inline-flex list-none p-0 m-0 text-xs text-gray-400 flex-wrap;
     li {
       @apply mr-4;
     }
@@ -38,6 +38,13 @@ a.post-card {
 
   
 
+}
+
+.blog-home {
+  img:first-child {
+    @apply shadow-none
+  }
+  
 }
 
 h2 {

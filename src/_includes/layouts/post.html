@@ -9,7 +9,10 @@ layout: layouts/base
 </div>
 <div class="post-content ">
     <h1>{{ title }}</h1>
-    <ul class="tags">
+    <div class="text-gray-400 text-xs">
+        by Salvatore A. Romeo (Follow me on <a target="_blank" href="https://twitter.com/romeosalv">twitter</a> or <a href="https://www.linkedin.com/in/salvatoreromeo/" target="_blank">linkedin</a>)
+    </div>
+    <ul class="tags opacity-50 hover:opacity-100">
         {%- for tag in tags -%}
         <li><a href="/tags/{{ tag }}">#{{ tag }}</a></li>
         {%- endfor -%}

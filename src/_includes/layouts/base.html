@@ -1,72 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="{{site.host}}{{ permalink }}">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="canonical" href="{{site.host}}{{ permalink }}"/>
     <title>{{ title | escape }} | ButOpen</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <meta name="description" content="{{ description | escape  }}">
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <meta name="description" content="{{ description | escape  }}"/>
 
-    <link rel="shortcut icon" href="/assets/img/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/img/favicon-32x32.png"
+    />
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/assets/img/favicon-16x16.png"
+    />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Rubik:wght@300;900&display=swap"
-          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Rubik:wght@300;900&display=swap"
+            rel="stylesheet"
+    />
 
     <!-- ✓ Google Fonts -->
 
-    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link
+            href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+            rel="stylesheet"
+    />
 
-    <script id="mcjs">!function (c, h, i, m, p) {
-        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
-    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/4ce7f05f69da58e8a15e2dcd9/f6403a9683d44f0f2a3c81da4.js");</script>
+    <script id="mcjs">
+        !(function (c, h, i, m, p) {
+            (m = c.createElement(h)),
+                (p = c.getElementsByTagName(h)[0]),
+                (m.async = 1),
+                (m.src = i),
+                p.parentNode.insertBefore(m, p);
+        })(
+            document,
+            "script",
+            "https://chimpstatic.com/mcjs-connected/js/users/4ce7f05f69da58e8a15e2dcd9/f6403a9683d44f0f2a3c81da4.js"
+        );
+    </script>
 
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] =
+                c[a] ||
+                function () {
+                    (c[a].q = c[a].q || []).push(arguments);
+                };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "b6i7bujqqk");
+    </script>
 </head>
 <body>
-
-<div class="main-root">
-
-    {{ content | safe }}
-
-</div>
+<div class="main-root">{{ content | safe }}</div>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XLVZ89F87B"></script>
+<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XLVZ89F87B"
+></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-XLVZ89F87B');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-XLVZ89F87B");
 </script>
 
 <footer>
     <div class="privacy">
         <small>© ButOpen - &nbsp;</small>
-        <a href="https://www.iubenda.com/privacy-policy/62802969"
-           class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy ">Privacy
-            Policy</a>
-        <script type="text/javascript">(function (w, d) {
-            var loader = function () {
-                var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
-                s.src = "https://cdn.iubenda.com/iubenda.js";
-                tag.parentNode.insertBefore(s, tag);
-            };
-            if (w.addEventListener) {
-                w.addEventListener("load", loader, false);
-            } else if (w.attachEvent) {
-                w.attachEvent("onload", loader);
-            } else {
-                w.onload = loader;
-            }
-        })(window, document);</script>
+        <a
+                href="https://www.iubenda.com/privacy-policy/62802969"
+                class="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+                title="Privacy Policy "
+        >Privacy Policy</a
+        >
+        <script type="text/javascript">
+            (function (w, d) {
+                var loader = function () {
+                    var s = d.createElement("script"),
+                        tag = d.getElementsByTagName("script")[0];
+                    s.src = "https://cdn.iubenda.com/iubenda.js";
+                    tag.parentNode.insertBefore(s, tag);
+                };
+                if (w.addEventListener) {
+                    w.addEventListener("load", loader, false);
+                } else if (w.attachEvent) {
+                    w.attachEvent("onload", loader);
+                } else {
+                    w.onload = loader;
+                }
+            })(window, document);
+        </script>
     </div>
 </footer>
-
 </body>
 </html>

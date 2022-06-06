@@ -3,6 +3,10 @@ FROM fholzer/nginx-brotli:v1.21.6
 
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh nano zopfli brotli 
+
+RUN npm install
+
+RUN npm run build
     
 COPY /dist /usr/share/nginx/html
 

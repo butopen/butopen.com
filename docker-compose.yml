@@ -1,0 +1,45 @@
+version: '3.3'
+
+services:
+  
+  jwildernginxproxy:
+    image: jwilder/nginx-proxy
+    container_name: jwildernginxproxy
+    labels:
+      com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /domns/acme:/etc/acme.sh
+      - /domns/certs:/etc/nginx/certs:ro
+      - /domns/vhostd:/etc/nginx/vhost.d
+      - /domns/html:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: always
+
+  letsencrypt-nginx-proxy-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt-nginx-proxy-companion
+    environment:
+      - NGINX_PROXY_CONTAINER=jwildernginxproxy
+    volumes:
+      - /domns/acme:/etc/acme.sh
+      - /domns/certs:/etc/nginx/certs
+      - /domns/vhostd:/etc/nginx/vhost.d
+      - /domns/html:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: always
+  
+  edupath:
+    build:
+      context: .
+    image: edupath-frontend
+    container_name: edupath
+    restart: always
+    ports:
+      - "10200:80"
+    environment:
+      - LETSENCRYPT_HOST=edupath.salvatoreromeo.com
+      - LETSENCRYPT_EMAIL=info@salvatoreromeo.com
+      - VIRTUAL_HOST=edupath.salvatoreromeo.com

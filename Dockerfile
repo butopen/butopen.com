@@ -30,6 +30,8 @@ FROM fholzer/nginx-brotli:v1.21.6
 
 COPY --from=build-step /dist /usr/share/nginx/html
 
+COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
+
 # RUN mv -v dist/* /usr/share/nginx/html
 
 
